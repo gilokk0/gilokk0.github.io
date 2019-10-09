@@ -1,4 +1,7 @@
 <html>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  </head>
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
