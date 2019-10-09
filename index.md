@@ -1,6 +1,6 @@
 <html>
-<head>
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <head>
+<link rel="shortcut icon" href="/favicon.ico" />
   </head>
 <body>
 <h1>Hello World</h1>
