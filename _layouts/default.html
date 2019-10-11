@@ -29,13 +29,17 @@
       <header>
         <span class="ribbon-outer">
           <span class="ribbon-inner">
-            <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+            <h1>{{ site.title | default: site.github.repository_name }}</h1>
             <h2>{{ site.description | default: site.github.project_tagline }}</h2>
           </span>
           <span class="left-tail"></span>
           <span class="right-tail"></span>
         </span>
       </header>
+      
+<section id="downloads">
+          <span class="inner">
+            <a href="{{ "/" | absolute_url }}"<em>download</em> Home</a>
 
       {% if site.show_downloads %}
         <section id="downloads">
