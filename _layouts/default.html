@@ -25,6 +25,15 @@
   <body>
     
     <div class="shell">
+      
+      <div class="wrapper">
+      <nav>
+        <ul>
+          <li><a href="{{ }}" class="button">Home</a></li>
+        </ul>
+      </nav>
+        
+    <div class="shell">
               
       <header>
         <span class="ribbon-outer">
@@ -50,12 +59,7 @@
         </div>
       {% endif %}
       
-     <div class="wrapper">
-      <nav>
-        <ul>
-          <li><a href="{{ }}" class="button">Home</a></li>
-        </ul>
-      </nav>
+     
 
       <span class="banner-fix"></span>
 
@@ -82,8 +86,8 @@
         <span class="octocat"></span>
       </footer>
         </div>
-        
     </div>
+      </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     {% if site.google_analytics %}
       <script>
