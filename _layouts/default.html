@@ -42,13 +42,13 @@
       {% if site.show_downloads %}
         <section id="downloads">
           <span class="inner">
-            <a href="">Home</a><a href="{{ site.github.zip_url }}"><em>download</em> Windows</a>
+            <a href="">Home</a><a href="{{ site.github.zip_url }}" class="tgz"><em>download</em> Windows</a>
           </span>
         </section>
       {% else %}
-        <section id="downloads">
+        <section id="downloads"> <!-- Actually no downloads -->
           <span class="inner">
-            <a href="">Home</a><p></p>
+            <a href="">Home</a><a class="tgz"></a>
           </span>
         </section>
       {% endif %}
