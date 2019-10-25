@@ -3,6 +3,7 @@ layout: default
 ---
 <style>
 p{
+  display: block;
   width: 1024px;
   height: 600px;
   }
