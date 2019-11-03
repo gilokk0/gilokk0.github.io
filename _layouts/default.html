@@ -89,8 +89,10 @@ section#downloads a {
   line-height: 1;
 }
 section#main_content {
+  z-index: 2;
   padding: 0;
   padding-top: 20px;
+  min-height:185px;
 }
 span.banner-fix {
     display: block;
@@ -121,7 +123,7 @@ span.banner-fix {
       {% if site.show_downloads %}
         <section id="downloads">
           <span class="inner">
-            <a href="" class="zip">Home</a><a href="https://gilokko.itch.io/brians-quest/download/bSNlwVL3Boab7k6VQOUM6TH5CJRvSua9EeyxwXYR" class="tgz"><em>download</em>Game</a>
+            <a href="index.md" class="zip">Home</a><a href="https://gilokko.itch.io/brians-quest/download/bSNlwVL3Boab7k6VQOUM6TH5CJRvSua9EeyxwXYR" class="tgz"><em>download</em>Game</a>
           </span>
         </section>
       {% else %}
