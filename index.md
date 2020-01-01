@@ -19,7 +19,6 @@ layout: default
    width: 100%;
 }
 </style>
-
 <div class="iframe-container">
   <iframe src="https://itch.io/embed-upload/1719250?color=333333" allowfullscreen=" style="border:none;"></iframe>
                                                                                                         </div>
