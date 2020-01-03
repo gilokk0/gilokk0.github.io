@@ -125,7 +125,7 @@ a#forkme_banner {
   width: 138px;
   height: 138px;
   display: block;
-  background: transparent url(../fork-sprite.png) 0 0 no-repeat;
+  background: transparent url(../images/fork-sprite.png) 0 0 no-repeat;
   text-indent: -9000px;
   z-index: 3;
 }
@@ -158,7 +158,7 @@ header span.left-tail, header span.right-tail {
   display: block;
   width: 19px;
   height: 10px;
-  background: transparent url(../ribbon-tail-sprite-2x.png) 0 0 no-repeat;
+  background: transparent url(../images/ribbon-tail-sprite-2x.png) 0 0 no-repeat;
   position: absolute;
   bottom: -10px;
   z-index: 0;
@@ -204,14 +204,14 @@ div#no-downloads {
   padding-bottom: 150px;
   margin: -80px auto -150px;
   z-index: 1;
-  background: transparent url(../bg-ramp.jpg) center 171px no-repeat;
+  background: transparent url(../images/bg-ramp.jpg) center 171px no-repeat;
 }
 div#no-downloads span.inner {
   display: block;
   position: relative;
   height: 197px;
   width: 550px;
-  background: transparent url(../download-sprite.png) 0 0 no-repeat;
+  background: transparent url(../images/download-sprite.png) 0 0 no-repeat;
 }
 section#downloads a {
   display: block;
@@ -219,7 +219,7 @@ section#downloads a {
   height: 67px;
   width: 275px;
   padding-top: 130px;
-  background: transparent url(../download-sprite.png) 0 0 no-repeat;
+  background: transparent url(../images/download-sprite.png) 0 0 no-repeat;
   text-align: center;
   line-height: 1;
   color: #fff;
@@ -257,7 +257,7 @@ section#downloads a.tgz:hover {
 }
 
 span.banner-fix {
-  background: transparent url(../download-fallback-bg2.png) center top no-repeat;
+  background: transparent url(../images/download-fallback-bg2.png) center top no-repeat;
   display: block;
   height: 32px;
   position: absolute;
@@ -275,7 +275,7 @@ section#main_content {
 /* footer */
 
 footer {
-  background: transparent url(../footer-ramp.jpg) center -1px no-repeat;
+  background: transparent url(../images/footer-ramp.jpg) center -1px no-repeat;
   padding-top: 104px;
   margin: -94px auto 40px;
   max-width: 560px;
@@ -336,7 +336,7 @@ footer span.left-tail, footer span.right-tail {
   display: block;
   width: 18px;
   height: 29px;
-  background: transparent url(../small-ribbon-tail-sprite.png) 0 0 no-repeat;
+  background: transparent url(../images/small-ribbon-tail-sprite.png) 0 0 no-repeat;
   position: absolute;
   bottom: 5px;
   z-index: 0;
@@ -353,7 +353,7 @@ footer span.right-tail {
 }
 
 footer span.octocat {
-  background: transparent url(../octocat.png) 0 0 no-repeat;
+  background: transparent url(../images/octocat.png) 0 0 no-repeat;
   display: block;
   width: 30px;
   height: 30px;
@@ -411,7 +411,7 @@ ul {
 
 ul li {
   padding-left: 10px;
-  background: transparent url(../chevron.png) left 6px no-repeat;
+  background: transparent url(../images/chevron.png) left 6px no-repeat;
 }
 
 blockquote {
@@ -419,7 +419,7 @@ blockquote {
   margin: 20px 0;
   color: #8b786f;
   padding-left: 1.35em;
-  background: transparent url('../blockquote-gfx.png') 0 4px no-repeat;
+  background: transparent url('../images/blockquote-gfx.png') 0 4px no-repeat;
 }
 
 img {
@@ -434,7 +434,7 @@ hr {
   border: none;
   outline: none;
   height: 18px;
-  background: transparent url('../hr.jpg') center center repeat-x;
+  background: transparent url('../images/hr.jpg') center center repeat-x;
   margin: 0 0 20px;
 }
 
