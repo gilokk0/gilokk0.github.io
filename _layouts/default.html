@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=yes">
 
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen">
-<!--    <link rel="stylesheet" href="{{ '/assets/css/mobile.css' | relative_url }}" media="screen"> -->
-
+    <link id="desktop" rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen">
+    <link id="mobile" rel="stylesheet" href="{{ '/assets/css/mobile.css' | relative_url }}" media="screen">
+    
+    function toggle(desktop) {
+      var styleSheet = document.getElementById("desktop");
+      if (desktop != styleSheet.href) styleSheet.href = desktop;
+      document.getElementById("st").checked = styleSheet.href === "mobile";
+    }
+    window.addEventListener("load",function() {
+      var desktop = localStorage.getItem("desktop") || document.getElementById("desktop").href;
+      toggle(desktop);
+      document.getElementById("st").addEventListener("change",function() {
+        var desktop = this.checked ? "mobile.css" : "style.css?v="
+        toggle(desktop);  
+        localStorage.setItem("desktop",desktop);
+      })
+    })
+    
     <script src="{{ '/assets/js/modernizr.js' | relative_url }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ '/assets/js/headsmart.min.js' | relative_url }}"></script>
@@ -82,20 +97,11 @@
         </span>
         <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
         <span class="octocat"></span>
-        <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" id="st"/>
+        <label for="st" class="toggle" onclick="toggle()">
         <span class="slider round"></span>
         </label>
-        <script>
-          switch (onchange) {
-            default:
-              "<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen">";
-              break;
-            case 1:
-              "<link rel="stylesheet" href="{{ '/assets/css/mobile.css' | relative_url }}" media="screen">";
-              break;
-          }
-        </script>
+
       </footer>
         </div>
 
