@@ -5,44 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=yes">
 
-    <link id="theme" rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen">
-
-    <script>
-    function toggle(theme) {
-      var styleSheet = document.getElementById("theme");
-      if (theme != styleSheet.href) styleSheet.href = theme;
-      document.getElementById("st").checked = styleSheet.href === "{{ '/assets/css/mobile.css' | relative_url }}";
-    }
-    window.addEventListener("load",function() {
-      var theme = localStorage.getItem("theme") || document.getElementById("theme").href;
-      toggle(theme);
-      document.getElementById("st").addEventListener("change",function() {
-        var theme = this.checked ? "{{ '/assets/css/mobile.css' | relative_url }}" : "{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
-        toggle(theme);
-        localStorage.setItem("theme",theme);
-      })
-    })
-
-        /*function toggle() {
-        var el = document.getElementById("theme");
-        var theme = (el.href === "{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}") ? "{{ '/assets/css/mobile.css' | relative_url }}" : "{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}";
-        el.href = theme;
-        localStorage.setItem('theme', theme);
-    }
-
-    function defaultTheme() {
-        var el = document.getElementById('theme');
-        var theme = localStorage.getItem('theme');
-
-        if (theme) {
-            el.href = theme
-        }
-    }
-
-    defaultTheme();*/
-
-    </script>
-
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" title="default">
+    <link rel="alternate stylesheet" href="{{ '/assets/css/mobile.css' | relative_url }}" media="screen" title="mobile">
+    
+    <script type="text/javascript" src="{{ '/assets/js/styleswitcher.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/modernizr.js' | relative_url }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ '/assets/js/headsmart.min.js' | relative_url }}"></script>
@@ -117,10 +83,11 @@
         </span>
         <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
         <span class="octocat"></span>
-        <label class="switch" onclick="toggle()">
+        <label class="switch" onclick="styleswitcher.js">
         <input type="checkbox" id="st"/>
         <span class="slider round"></span>
         </label>
+        <a href="#">change style to default</a><a href="#">change style to mobile</a>
 
       </footer>
         </div>
