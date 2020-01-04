@@ -5,28 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=yes">
 
-    <link id="desktop" rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen">
+    <link id="theme" rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen">
     <link id="mobile" rel="stylesheet" href="{{ '/assets/css/mobile.css' | relative_url }}" media="screen">
 
-    <script>    
+    <script>
     function toggle(theme) {
-      var styleSheet = document.getElementById("desktop");
+      var styleSheet = document.getElementById("theme");
       if (theme != styleSheet.href) styleSheet.href = theme;
       document.getElementById("st").checked = styleSheet.href === "/assets/css/mobile.css";
     }
     window.addEventListener("load",function() {
-      var theme = localStorage.getItem("desktop") || document.getElementById("desktop").href;
+      var theme = localStorage.getItem("theme") || document.getElementById("theme").href;
       toggle(theme);
       document.getElementById("st").addEventListener("change",function() {
         var theme = this.checked ? "/assets/css/mobile.css" : "/assets/css/style.css?v="
-        toggle(theme);  
-        localStorage.setItem("desktop",theme);
+        toggle(theme);
+        localStorage.setItem("theme",theme);
       })
     })
-      
+
         /*function toggle() {
         var el = document.getElementById("theme");
-        var theme = (el.href === 'default.css') ? 'dark.css' : 'default.css';
+        var theme = (el.href === '/assets/css/style.css?v=') ? '/assets/css/mobile.css' : '/assets/css/style.css?v=';
         el.href = theme;
         localStorage.setItem('theme', theme);
     }
@@ -43,7 +43,7 @@
     defaultTheme();*/
 
     </script>
-    
+
     <script src="{{ '/assets/js/modernizr.js' | relative_url }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ '/assets/js/headsmart.min.js' | relative_url }}"></script>
