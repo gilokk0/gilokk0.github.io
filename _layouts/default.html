@@ -9,20 +9,39 @@
     <link id="mobile" rel="stylesheet" href="{{ '/assets/css/mobile.css' | relative_url }}" media="screen">
 
     <script>    
-    function toggle(desktop) {
+    function toggle(theme) {
       var styleSheet = document.getElementById("desktop");
-      if (desktop != styleSheet.href) styleSheet.href = desktop;
-      document.getElementById("st").checked = styleSheet.href === "mobile";
+      if (theme != styleSheet.href) styleSheet.href = theme;
+      document.getElementById("st").checked = styleSheet.href === "/assets/css/mobile.css";
     }
     window.addEventListener("load",function() {
-      var desktop = localStorage.getItem("desktop") || document.getElementById("desktop").href;
-      toggle(desktop);
+      var theme = localStorage.getItem("desktop") || document.getElementById("desktop").href;
+      toggle(theme);
       document.getElementById("st").addEventListener("change",function() {
-        var desktop = this.checked ? "mobile.css" : "style.css?v="
-        toggle(desktop);  
-        localStorage.setItem("desktop",desktop);
+        var theme = this.checked ? "/assets/css/mobile.css" : "/assets/css/style.css?v="
+        toggle(theme);  
+        localStorage.setItem("desktop",theme);
       })
     })
+      
+        /*function toggle() {
+        var el = document.getElementById("theme");
+        var theme = (el.href === 'default.css') ? 'dark.css' : 'default.css';
+        el.href = theme;
+        localStorage.setItem('theme', theme);
+    }
+
+    function defaultTheme() {
+        var el = document.getElementById('theme');
+        var theme = localStorage.getItem('theme');
+
+        if (theme) {
+            el.href = theme
+        }
+    }
+
+    defaultTheme();*/
+
     </script>
     
     <script src="{{ '/assets/js/modernizr.js' | relative_url }}"></script>
