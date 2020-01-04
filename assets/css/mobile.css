@@ -166,12 +166,12 @@ header span.left-tail, header span.right-tail {
 
 header span.left-tail {
   background-position: 0 0;
-  left: 0px;
+  left: 0;
 }
 
 header span.right-tail {
   background-position: -19px 0;
-  right: 0px;
+  right: 0;
 }
 
 header h1 {
