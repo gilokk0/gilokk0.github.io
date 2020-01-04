@@ -11,13 +11,13 @@
     function toggle(theme) {
       var styleSheet = document.getElementById("theme");
       if (theme != styleSheet.href) styleSheet.href = theme;
-      document.getElementById("st").checked = styleSheet.href === "/assets/css/mobile.css";
+      document.getElementById("st").checked = styleSheet.href === "{{ '/assets/css/mobile.css' | relative_url }}";
     }
     window.addEventListener("load",function() {
       var theme = localStorage.getItem("theme") || document.getElementById("theme").href;
       toggle(theme);
       document.getElementById("st").addEventListener("change",function() {
-        var theme = this.checked ? "/assets/css/mobile.css" : "/assets/css/style.css?v="
+        var theme = this.checked ? "{{ '/assets/css/mobile.css' | relative_url }}" : "{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
         toggle(theme);
         localStorage.setItem("theme",theme);
       })
@@ -25,7 +25,7 @@
 
         /*function toggle() {
         var el = document.getElementById("theme");
-        var theme = (el.href === '/assets/css/style.css?v=') ? '/assets/css/mobile.css' : '/assets/css/style.css?v=';
+        var theme = (el.href === "{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}") ? "{{ '/assets/css/mobile.css' | relative_url }}" : "{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}";
         el.href = theme;
         localStorage.setItem('theme', theme);
     }
