@@ -17,6 +17,15 @@
         $('#main_content').headsmart()
       })
     </script>
+    <script>
+    var isMobile = navigator.userAgent.toLowerCase().match(/mobi/i);
+    if (isMobile) {
+      setActiveStyleSheet('mobile')
+    }
+    else {
+      setActiveStyleSheet('desktop')
+    }
+    </script>
 
 {% seo %}
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -83,8 +92,8 @@
         </span>
         <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
         <span class="octocat"></span>
-        <a href="#" onclick="setActiveStyleSheet('desktop');return false;">Desktop</a> |
-        <a href="#" onclick="setActiveStyleSheet('mobile');return false;">Mobile</a>
+      <!--  <a href="#" onclick="setActiveStyleSheet('desktop');return false;">Desktop</a> |
+        <a href="#" onclick="setActiveStyleSheet('mobile');return false;">Mobile</a> -->
       </footer>
         </div>
 
