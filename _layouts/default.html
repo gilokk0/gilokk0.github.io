@@ -18,7 +18,6 @@
       })
     </script>
     <script>
-    //var isMobile = navigator.userAgent.match(/Mobi/);
     function isMobile() {
       if (navigator.userAgent.match(/Mobi/)) {
         return true;
@@ -30,9 +29,9 @@
       var setmobl = setActiveStyleSheet('mobile')
       var mobile = isMobile();
       if (!mobile) {
-        setdesktp;
-      } else {
         setmobl;
+      } else {
+        setdeskt;
         alert("You're using a Mobile Device!!!")
       }
     })();
