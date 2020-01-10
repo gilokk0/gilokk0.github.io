@@ -25,14 +25,14 @@
       return false;
     }
     (function () {
-      var setdesktp = setActiveStyleSheet('desktop')
-      var setmobl = setActiveStyleSheet('mobile')
+      var setdesktp = setActiveStyleSheet('desktop');
+      var setmobl = setActiveStyleSheet('mobile');
       var mobile = isMobile();
-      if (!mobile) {
+      if (mobile) {
         setmobl;
+        alert("You're using a Mobile Device!!!")
       } else {
         setdesktp;
-        alert("You're using a Mobile Device!!!")
       }
     })();
     </script>
