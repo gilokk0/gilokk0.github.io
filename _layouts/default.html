@@ -21,10 +21,12 @@
     var isMobile = navigator.userAgent.match(/Mobi/);
     if (isMobile) {
       setActiveStyleSheet('mobile');
+      return false;
       alert("You're using a Mobile Device!!!")
     }
     else {
       setActiveStyleSheet('desktop');
+      return false;
     }
     </script>
 
