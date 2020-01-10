@@ -18,14 +18,24 @@
       })
     </script>
     <script>
-    var isMobile = navigator.userAgent.match(/Mobi/);
-    if (isMobile) {
-      setActiveStyleSheet('mobile');
-      alert("You're using a Mobile Device!!!")
+    //var isMobile = navigator.userAgent.match(/Mobi/);
+    function isMobile() {
+      if (navigator.userAgent.match(/Mobi/)) {
+        return true;
+      }
+      return false;
     }
-    else {
-      setActiveStyleSheet('desktop');
-    }
+    (function () {
+      var setdesktp = setActiveStyleSheet('desktop')
+      var setmobl = setActiveStyleSheet('mobile')
+      var mobile = isMobile();
+      if (!mobile) {
+        setdesktp;
+        alert("You're using a Mobile Device!!!")
+      } else {
+        setmobl;
+      }
+    })();
     </script>
 
 {% seo %}
