@@ -20,10 +20,12 @@
     <script>
     var isMobile = navigator.userAgent.toLowerCase().match(/mobi/i);
     if (isMobile) {
-      setActiveStyleSheet('mobile')
+      setActiveStyleSheet('mobile');
+      return false;
     }
     else {
-      setActiveStyleSheet('desktop')
+      setActiveStyleSheet('desktop');
+      return false;
     }
     </script>
 
