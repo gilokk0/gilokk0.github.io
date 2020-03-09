@@ -4,9 +4,9 @@
   "description": "Brian is on a quest to find the love of his life. Will he find it? Play and find out.",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "type": "image/x-icon",
-      "sizes": "48x48"
+      "src": "/assets/images/icon144.png",
+      "type": "image/png",
+      "sizes": "144x144"
     }
   ],
   "start_url": "/",
