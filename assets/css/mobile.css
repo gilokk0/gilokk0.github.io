@@ -235,7 +235,7 @@ section#downloads a:hover {
 }
 
 section#downloads a em {
-  font: bold italic 12px/1 Georgia, Times, “Times New Roman”, serif;
+  font: bold italic 18px/1 Georgia, Times, “Times New Roman”, serif;
   color: #83b7da;
   display: block;
 }
@@ -302,7 +302,7 @@ footer span.ribbon-inner {
 footer p {
   font-family: 'Open Sans', Myriad, Calibri, sans-serif;
   font-weight: bold;
-  font-size: 1.15em;
+  font-size: 1.2em;
   color: #8b786f;
 }
 
@@ -360,6 +360,10 @@ footer span.octocat {
   width: 30px;
   height: 30px;
   margin: 0 auto;
+}
+
+div.cookies {
+  font-size: 1.5em;
 }
 
 /* Toggle Switch
