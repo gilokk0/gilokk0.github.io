@@ -6,7 +6,7 @@
     {
       "src": "favicon.ico",
       "type": "image/x-icon",
-    },
+    }
   ],
   "start_url": "/index.md",
   "background_color": "#ece4d8",
