@@ -1,0 +1,16 @@
+{
+  "short_name": "BriansQuest",
+  "name": "Brian's Quest",
+  "description": "Brian is on a quest to find the love of his life. Will he find it? Play and find out.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+    },
+  ],
+  "start_url": "./index.md",
+  "background_color": "#ece4d8",
+  "display": "minimal-ui",
+  "scope": "/",
+  "theme_color": "#ece4d8"
+}
