@@ -120,21 +120,21 @@
     navigator.serviceWorker.register('./sw.js').then(function(reg) {
     if (reg.installing) {
         // Service Worker is Installing
-        console.log('Service Worker is Installing...');
+        //console.log('Service Worker is Installing...');
     }
 })
 
 navigator.serviceWorker.register('./sw.js').then(function(reg) {
     if (reg.waiting) {
         // Service Worker is Waiting
-        console.log('Service Worker is Waiting...');
+        //console.log('Service Worker is Waiting...');
     }
 })
 
 navigator.serviceWorker.register('./sw.js').then(function(reg) {
     if (reg.active) {
         // Service Worker is Active
-        console.log('Service Worker is Active');
+        //console.log('Service Worker is Active');
     }
 })
     </script>
