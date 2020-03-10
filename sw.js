@@ -54,9 +54,9 @@ var arrayOfFilesToCache = [
 ];
 
 
-  self.addEventListener('install', function(event) {
+  self.addEventListener('install', (event) => {
     event.waitUntil(
-      caches.open(v2).then(function(cache) {
+      caches.open(v2).then((cache) => {
         return cache.addAll(arrayOfFilesToCache);
       })
     );
@@ -93,6 +93,6 @@ var arrayOfFilesToCache = [
     );
   });
 
-self.addEventListener('message', function(event) {
+self.addEventListener('message', (event) => {
   // Do stuff with postMessages received from document
 });
