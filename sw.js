@@ -57,6 +57,7 @@ var urlsToCache = [
   '/assets/images/small-ribbon-tail-sprite-2x.png'
 ];
 
+
 self.addEventListener('install', function(event) {
   // Perform install steps
   event.waitUntil(
@@ -66,11 +67,6 @@ self.addEventListener('install', function(event) {
         return cache.addAll(urlsToCache);
       })
   );
-});
-
-     ]);
-   })
- );
 });
 
 self.addEventListener('fetch', function(event) {
