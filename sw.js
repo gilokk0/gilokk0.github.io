@@ -63,7 +63,7 @@ self.addEventListener('install', function(event) {
     var cacheKeeplist = ['v1'];
 
     event.waitUntil(
-      caches.keys().then((keyList) => {
+      caches.keys().then(function(keyList) {
         return Promise.all(keyList.map(function(key) {
           if (cacheKeeplist.indexOf(key) === -1) {
             return caches.delete(key);
@@ -84,7 +84,7 @@ self.addEventListener('install', function(event) {
 
           return response;
         });
-      }).catch(() => {
+      }).catch(function() {
         return caches.match('./favicon.ico');
       })
     );
