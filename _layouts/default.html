@@ -121,6 +121,18 @@
         // Service Worker is Installing
     }
 })
+
+navigator.serviceWorker.register('./sw.js').then(function(registration) {
+    if (registration.waiting) {
+        // Service Worker is Waiting
+    }
+})
+
+navigator.serviceWorker.register('./sw.js').then(function(registration) {
+    if (registration.active) {
+        // Service Worker is Active
+    }
+})
     </script>
 
   </body>
