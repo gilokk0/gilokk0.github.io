@@ -4,7 +4,6 @@ var urlsToCache = [
   '/index.md',
   '/404.md',
   '/favicon.ico',
-  '/manifest.json',
   '/_layouts/default.html',
   '/assets/css/style.css',
   '/assets/css/mobile.css',
