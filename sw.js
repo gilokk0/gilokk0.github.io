@@ -1,6 +1,6 @@
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('v2').then((cache) => {
+    caches.open('v1').then((cache) => {
       return cache.addAll([
         './',
         './404.md',
@@ -54,17 +54,13 @@ self.addEventListener('install', (event) => {
         '/assets/images/site-2.png',
         '/assets/images/small-ribbon-tail-sprite.png',
         '/assets/images/small-ribbon-tail-sprite-2x.png'
-
-        //…
-
-        // include other new resources for the new version...
       ]);
     })
   );
 });
 
   self.addEventListener('activate', (event) => {
-    var cacheKeeplist = ['v2'];
+    var cacheKeeplist = ['v1'];
 
     event.waitUntil(
       caches.keys().then((keyList) => {
@@ -82,7 +78,7 @@ self.addEventListener('install', (event) => {
       caches.match(event.request).then((resp) => {
         return resp || fetch(event.request).then((response) => {
           let responseClone = response.clone();
-          caches.open('v2').then((cache) => {
+          caches.open('v1').then((cache) => {
             cache.put(event.request, responseClone);
           });
 
