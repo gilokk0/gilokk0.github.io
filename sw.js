@@ -1,4 +1,3 @@
-var currentCacheName = 'briansquest-cache-v1';
 var arrayOfFilesToCache = [
   '/',
   '/index.md',
