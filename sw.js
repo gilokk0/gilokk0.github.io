@@ -1,6 +1,6 @@
-self.addEventListener('install', (event) => {
+self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v1').then((cache) => {
+    caches.open('v1').then(function(cache) {
       return cache.addAll([
         './',
         './404.md',
@@ -59,12 +59,12 @@ self.addEventListener('install', (event) => {
   );
 });
 
-  self.addEventListener('activate', (event) => {
+  self.addEventListener('activate', function(event) {
     var cacheKeeplist = ['v1'];
 
     event.waitUntil(
       caches.keys().then((keyList) => {
-        return Promise.all(keyList.map((key) => {
+        return Promise.all(keyList.map(function(key) {
           if (cacheKeeplist.indexOf(key) === -1) {
             return caches.delete(key);
           }
@@ -73,12 +73,12 @@ self.addEventListener('install', (event) => {
     );
   });
 
-  self.addEventListener('fetch', (event) => {
+  self.addEventListener('fetch', function(event) {
     event.respondWith(
-      caches.match(event.request).then((resp) => {
-        return resp || fetch(event.request).then((response) => {
+      caches.match(event.request).then(function(resp) {
+        return resp || fetch(event.request).then(function(response) {
           let responseClone = response.clone();
-          caches.open('v1').then((cache) => {
+          caches.open('v1').then(function(cache) {
             cache.put(event.request, responseClone);
           });
 
@@ -90,6 +90,6 @@ self.addEventListener('install', (event) => {
     );
   });
 
-self.addEventListener('message', (event) => {
+self.addEventListener('message', function(event) {
   // Do stuff with postMessages received from document
 });
