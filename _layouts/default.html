@@ -107,32 +107,15 @@
 
     <script type="text/javascript">
     if ('serviceWorker' in navigator) {
-    	navigator.serviceWorker.register('./sw.js')
-    	.then(function(registration) {
-    		console.log("Service Worker Registered", registration);
-    	})
-    	.catch(function(err) {
-    		console.log("Service Worker Failed to Register", err);
-    	})
+      navigator.serviceWorker.register('./sw.js', {scope: './'})
+      .then((reg) => {
+        // registration worked
+        console.log('Registration succeeded. Scope is ' + reg.scope);
+      }).catch((error) => {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      });
     }
-
-    navigator.serviceWorker.register('./sw.js').then(function(registration) {
-    if (registration.installing) {
-        // Service Worker is Installing
-    }
-})
-
-navigator.serviceWorker.register('./sw.js').then(function(registration) {
-    if (registration.waiting) {
-        // Service Worker is Waiting
-    }
-})
-
-navigator.serviceWorker.register('./sw.js').then(function(registration) {
-    if (registration.active) {
-        // Service Worker is Active
-    }
-})
     </script>
 
   </body>
