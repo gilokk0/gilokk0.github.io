@@ -1,7 +1,4 @@
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('v1').then(function(cache) {
-      return cache.addAll([
+/*
         './',
         './404.md',
         './favicon.ico',
@@ -54,6 +51,13 @@ self.addEventListener('install', function(event) {
         './assets/images/site-2.png',
         './assets/images/small-ribbon-tail-sprite.png',
         './assets/images/small-ribbon-tail-sprite-2x.png'
+*/
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('v1').then(function(cache) {
+      return cache.addAll([
+        './',
+        './favicon.ico'
       ]);
     })
   );
