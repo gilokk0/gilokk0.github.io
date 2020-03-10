@@ -56,7 +56,7 @@ var arrayOfFilesToCache = [
 
   self.addEventListener('install', (event) => {
     event.waitUntil(
-      caches.open(v2).then((cache) => {
+      caches.open('v2').then((cache) => {
         return cache.addAll(arrayOfFilesToCache);
       })
     );
