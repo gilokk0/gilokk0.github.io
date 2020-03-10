@@ -54,7 +54,7 @@ var arrayOfFilesToCache = [
   '/assets/images/site-2.png',
   '/assets/images/small-ribbon-tail-sprite.png',
   '/assets/images/small-ribbon-tail-sprite-2x.png'
-]
+];
 
 
   self.addEventListener('install', function(event) {
