@@ -1,10 +1,8 @@
 var currentCacheName = 'bqc-v1';
 var arrayOfFilesToCache = [
   '/',
-  '/index.md',
   '/404.md',
   '/favicon.ico',
-  '/_layouts/default.html',
   '/assets/css/style.css',
   '/assets/css/mobile.css',
   '/assets/fonts/opensans-bolditalic-webfont.eot',
@@ -60,7 +58,7 @@ var arrayOfFilesToCache = [
   self.addEventListener('install', function(event) {
     event.waitUntil(
       caches.open(currentCacheName).then(function(cache) {
-        return cache.addAll(arrayOfFilesToCache.map(url => new Request(url, {credentials: 'same-origin'})));
+        return cache.addAll(arrayOfFilesToCache);
       })
     );
   });
