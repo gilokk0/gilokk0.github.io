@@ -1,3 +1,4 @@
+var currentCacheName = 'my-site-cache-v1'
 var arrayOfFilesToCache = [
   '/',
   '/index.md',
