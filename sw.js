@@ -60,7 +60,7 @@ var arrayOfFilesToCache = [
   self.addEventListener('install', function(event) {
     event.waitUntil(
       caches.open(currentCacheName).then(function(cache) {
-        return cache.addAll(arrayOfFilesToCache);
+        return cache.addAll(arrayOfFilesToCache.map(url => new Request(url, {credentials: 'same-origin'})));
       })
     );
   });
