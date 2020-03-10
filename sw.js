@@ -1,4 +1,3 @@
-//var currentCacheName = 'bqc-v1';
 var arrayOfFilesToCache = [
   './',
   './404.md',
@@ -57,32 +56,42 @@ var arrayOfFilesToCache = [
 
   self.addEventListener('install', function(event) {
     event.waitUntil(
-      caches.open(currentCacheName).then(function(cache) {
+      caches.open(v2).then(function(cache) {
         return cache.addAll(arrayOfFilesToCache);
       })
     );
   });
 
-  self.addEventListener('activate', function(event) {
+  self.addEventListener('activate', (event) => {
+    var cacheKeeplist = ['v2'];
+
     event.waitUntil(
-      // Get all the cache names
-      caches.keys().then(function(cacheNames) {
-        return Promise.all(
-          // Get all the items that are stored under a different cache name than the current one
-          cacheNames.filter(function(cacheName) {
-            return cacheName != currentCacheName;
-          }).map(function(cacheName) {
-            // Delete the items
-            return caches.delete(cacheName);
-          })
-        ); // end Promise.all()
-      }) // end caches.keys()
-    ); // end event.waitUntil()
+      caches.keys().then((keyList) => {
+        return Promise.all(keyList.map((key) => {
+          if (cacheKeeplist.indexOf(key) === -1) {
+            return caches.delete(key);
+          }
+        }));
+      })
+    );
   });
 
-  self.addEventListener('fetch', function(event) {
-  // Do stuff with fetch events
-});
+  self.addEventListener('fetch', (event) => {
+    event.respondWith(
+      caches.match(event.request).then((resp) => {
+        return resp || fetch(event.request).then((response) => {
+          let responseClone = response.clone();
+          caches.open('v2').then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+
+          return response;
+        });
+      }).catch(() => {
+        return caches.match('./favicon.ico');
+      })
+    );
+  });
 
 self.addEventListener('message', function(event) {
   // Do stuff with postMessages received from document
