@@ -108,7 +108,7 @@
 
     <script type="text/javascript">
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js', {scope: './'})
+      navigator.serviceWorker.register('./sw_minified.js', {scope: './'})
       .then(function(reg) {
         // registration worked
         console.log('Registration succeeded. Scope is ' + reg.scope);
@@ -118,21 +118,21 @@
       });
     }
 
-    navigator.serviceWorker.register('./sw.js').then(function(reg) {
+    navigator.serviceWorker.register('./sw_minified.js').then(function(reg) {
     if (reg.installing) {
         // Service Worker is Installing
         //console.log('Service Worker is Installing...');
     }
 })
 
-navigator.serviceWorker.register('./sw.js').then(function(reg) {
+navigator.serviceWorker.register('./sw_minified.js').then(function(reg) {
     if (reg.waiting) {
         // Service Worker is Waiting
         //console.log('Service Worker is Waiting...');
     }
 })
 
-navigator.serviceWorker.register('./sw.js').then(function(reg) {
+navigator.serviceWorker.register('./sw_minified.js').then(function(reg) {
     if (reg.active) {
         // Service Worker is Active
         //console.log('Service Worker is Active');
