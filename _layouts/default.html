@@ -9,8 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{{ '/assets/css/style_minified.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" title="desktop">
     <link rel="alternate stylesheet" type="text/css" href="{{ '/assets/css/mobile_minified.css' | relative_url }}" media="screen" title="mobile">
     <link rel="apple-touch-icon" href="/assets/images/icon192a.png">
-    <link rel="3rdpartycookiechecker" type="text/html" href="https://mindmup.github.io/3rdpartycookiecheck/start.html">
 
+    <script>
+      document.cookie = 'cross-site-cookie=bar; SameSite=None; Secure';
+    </script>
     <script type="text/javascript" src="{{ '/assets/js/styleswitcher.js' | relative_url }}" async></script>
     <script src="{{ '/assets/js/modernizr.js' | relative_url }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
