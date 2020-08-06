@@ -1,4 +1,4 @@
 ---
 layout: default_minified
 ---
-<iframe title="Brian's Quest Game" src="https://itch.io/embed-upload/1719250?color=333333" allowfullscreen="" width="1024" height="600" style="border:none;"></iframe>
+<iframe title="Brian's Quest Game" src="https://raw.githubusercontent.com/gilokk0/gilokk0.github.io/master/index.html" allowfullscreen="" width="1024" height="600" style="border:none;"></iframe>
